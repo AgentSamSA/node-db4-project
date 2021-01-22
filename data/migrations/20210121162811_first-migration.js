@@ -30,7 +30,6 @@ exports.up = function (knex) {
             tbl.integer('quantity').unsigned().notNullable();
             tbl.integer('unit_id')
                 .unsigned()
-                .notNullable()
                 .references('unit_id')
                 .inTable('units')
                 .onDelete('RESTRICT');
@@ -41,7 +40,7 @@ exports.up = function (knex) {
                 .unsigned()
                 .notNullable()
                 .references('recipe_id')
-                .inTable('recipe')
+                .inTable('recipes')
                 .onDelete('RESTRICT');
             tbl.integer('step_number').unsigned().notNullable();
             tbl.string('instructions').notNullable();
